@@ -42,7 +42,7 @@ func (a *Array) At(i int) (int, error) {
 	return a.val[i], nil
 }
 
-func (a *Array) Push(value int) {
+func (a *Array) PushBack(value int) {
 	if a.size == a.cap {
 		a.resize()
 	}
@@ -77,7 +77,7 @@ func (a *Array) Prepend(value int) {
 	a.size++
 }
 
-func (a *Array) Pop() (int, error) {
+func (a *Array) PopBack() (int, error) {
 	if a.size == 0 {
 		return 0, errors.New("size = 0")
 	}
@@ -124,6 +124,9 @@ func (a *Array) findAfterIndex(index, value int) (int, error) {
 func (a *Array) resize() {
 	oldCap := a.cap
 	newCap := oldCap * oldCap
+	if newCap == 1 {
+		newCap = 2
+	}
 
 	if newCap >= 1024 {
 		newCap = oldCap + oldCap/4
