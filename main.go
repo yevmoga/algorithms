@@ -1,22 +1,22 @@
 package main
 
 import (
-	"algorithms/stack"
+	"algorithms/queue"
 	"fmt"
 )
 
 func main() {
-	arrStack := stack.New("array")
-	arrStack.Push(1)
-	arrStack.Push(2)
-	arrStack.Push(3)
-	val, err := arrStack.Pop()
+	arrQueue := queue.New("array")
+	arrQueue.Push(1)
+	arrQueue.Push(2)
+	arrQueue.Push(3)
+	val, err := arrQueue.Pop()
 
-	listStack := stack.New("list")
-	listStack.Push(1)
-	listStack.Push(2)
-	listStack.Push(3)
-	val2, err2 := listStack.Pop()
+	listQueue := queue.New("list")
+	listQueue.Push(1)
+	listQueue.Push(2)
+	listQueue.Push(3)
+	val2, err2 := listQueue.Pop()
 
 	fmt.Println(val, err)
 	fmt.Println(val2, err2)

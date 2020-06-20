@@ -64,7 +64,7 @@ func (a *Array) Insert(index, value int) error {
 	return nil
 }
 
-func (a *Array) Prepend(value int) {
+func (a *Array) PushFront(value int) {
 	if a.size == a.cap {
 		a.resize()
 	}
