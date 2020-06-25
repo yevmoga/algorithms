@@ -1,23 +1,30 @@
 package main
 
 import (
-	"algorithms/queue"
+	"algorithms/hash"
 	"fmt"
 )
 
 func main() {
-	arrQueue := queue.New("array")
-	arrQueue.Push(1)
-	arrQueue.Push(2)
-	arrQueue.Push(3)
-	val, err := arrQueue.Pop()
+	h := hash.New(10)
 
-	listQueue := queue.New("list")
-	listQueue.Push(1)
-	listQueue.Push(2)
-	listQueue.Push(3)
-	val2, err2 := listQueue.Pop()
+	h.Insert(100, 1)
+	h.Insert(101, 2)
+	h.Insert(102, 3)
 
-	fmt.Println(val, err)
-	fmt.Println(val2, err2)
+	h.Insert(110, 4)
+	h.Insert(111, 5)
+	h.Insert(112, 6)
+
+	h.Insert(121, 7)
+
+	fmt.Println(h.Search(100))
+	fmt.Println(h.Search(101))
+	fmt.Println(h.Search(110))
+	fmt.Println(h.Search(999))
+
+	h.Delete(100)
+	h.Delete(110)
+	h.Delete(111)
+	h.Delete(999)
 }
