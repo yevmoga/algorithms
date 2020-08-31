@@ -6,9 +6,10 @@ import (
 )
 
 func main() {
+	//arr := []int{5, 4, 3, 2, 1}
 	arr := []int{100, 3, -19, 99, 1, 17, 99}
 
-	sort.Bubble(arr)
+	sort.Selection(arr)
 
 	fmt.Println(arr)
 }
